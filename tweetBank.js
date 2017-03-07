@@ -2,7 +2,8 @@ const _ = require('lodash');
 var data = [];
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  var id = Math.floor(Math.random() * 100000).toString(); 
+  data.push({ name: name, content: content, id:id });
 }
 
 function list () {
@@ -34,4 +35,4 @@ for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
-// console.log(data)
+console.log(data)

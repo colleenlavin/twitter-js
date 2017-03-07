@@ -3,12 +3,14 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const app = express();
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true })
 
+app.use(bodyParser.urlencoded({extended: true}))
 app.use('/', routes);
 // app.use(express.static('public'));
 app.use('/static', express.static('public'))
