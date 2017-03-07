@@ -11,10 +11,13 @@
   <div class="col-md-9">
 
     <!-- display tweets here -->
+    <h2>All Tweets</h2>
     {% for tweet in tweets %}
     <ul style = "list-style-type:none">
-      <li>{{tweet.name}}</li>
+      <a href="/users/{{tweet.name}}">
+      <li class= "name">{{tweet.name}}</li></a>
       <li>{{tweet.content}}</li>
+      <li>Re-tweet</li>
     </ul>
     {% endfor %}
 
